@@ -42,7 +42,7 @@ export default function Home() {
             />
 
             <h1
-              className="font-[family-name:var(--font-thunder)] text-4xl md:text-6xl leading-[0.95] mb-6"
+              className="font-[family-name:var(--font-thunder)] font-semibold text-4xl md:text-6xl leading-[0.95] mb-6"
               style={{ color: "var(--chiyo-purple)" }}
             >
               {hero.title}
@@ -95,7 +95,7 @@ export default function Home() {
       >
         <div className="max-w-[900px] mx-auto text-center">
           <h2
-            className="font-[family-name:var(--font-thunder)] text-3xl md:text-5xl mb-6"
+            className="font-[family-name:var(--font-thunder)] font-semibold text-3xl md:text-5xl mb-6"
             style={{ color: "var(--chiyo-green)" }}
           >
             {about.heading}
@@ -117,7 +117,7 @@ export default function Home() {
             style={{ backgroundColor: "white" }}
           >
             <h3
-              className="font-[family-name:var(--font-thunder)] text-3xl mb-6"
+              className="font-[family-name:var(--font-thunder)] font-semibold text-3xl mb-6"
               style={{ color: "var(--chiyo-pink)" }}
             >
               {ingredients.heading}
@@ -140,7 +140,7 @@ export default function Home() {
             style={{ backgroundColor: "white" }}
           >
             <h3
-              className="font-[family-name:var(--font-thunder)] text-3xl mb-6"
+              className="font-[family-name:var(--font-thunder)] font-semibold text-3xl mb-6"
               style={{ color: "var(--chiyo-pink)" }}
             >
               Nutrition Facts
@@ -178,7 +178,7 @@ export default function Home() {
             />
           </div>
           <div className="order-1 md:order-2 text-white">
-            <h2 className="font-[family-name:var(--font-thunder)] text-3xl md:text-5xl mb-6">
+            <h2 className="font-[family-name:var(--font-thunder)] font-semibold text-3xl md:text-5xl mb-6">
               {gallery.heading}
             </h2>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed">
@@ -194,7 +194,7 @@ export default function Home() {
         style={{ backgroundColor: "var(--chiyo-purple)" }}
       >
         <div className="max-w-[700px] mx-auto">
-          <h2 className="font-[family-name:var(--font-thunder)] text-3xl md:text-5xl mb-4 text-white">
+          <h2 className="font-[family-name:var(--font-thunder)] font-semibold text-3xl md:text-5xl mb-4 text-white">
             {footer.heading}
           </h2>
           <p className="text-lg text-white/80 mb-8">{footer.body}</p>

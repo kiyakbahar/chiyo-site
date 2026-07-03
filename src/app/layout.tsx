@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Baloo_2 } from "next/font/google";
-import localFont from "next/font/local";
+import { Baloo_2, Fredoka } from "next/font/google";
 import "./globals.css";
 
 const baloo = Baloo_2({
@@ -8,26 +7,10 @@ const baloo = Baloo_2({
   subsets: ["latin"],
 });
 
-const thunder = localFont({
-  src: [
-    {
-      path: './fonts/Thunder-BlackLC.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/Thunder-BlackLC.woff',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/Thunder-BlackLC.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
+const fredoka = Fredoka({
   variable: "--font-thunder",
-  display: "swap",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${baloo.variable} ${thunder.variable} antialiased`}
+        className={`${baloo.variable} ${fredoka.variable} antialiased`}
       >
         {children}
       </body>
