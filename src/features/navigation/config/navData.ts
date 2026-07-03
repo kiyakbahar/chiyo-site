@@ -4,17 +4,10 @@ import { CartItem } from '../types';
 export const sampleCartItems: CartItem[] = [
     {
         id: 1,
-        name: "Lemon Ginger Soda",
-        price: 4.99,
+        name: "Strawberry Chia Pudding",
+        price: 3.99,
         quantity: 1,
-        image: "/assets/images/can/lemon.webp",
-    },
-    {
-        id: 2,
-        name: "Blueberry Açai Soda",
-        price: 5.49,
-        quantity: 1,
-        image: "/assets/images/can/blueberry.webp",
+        image: "/assets/chiyo/jars-both.png",
     },
 ];
 
