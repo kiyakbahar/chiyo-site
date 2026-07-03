@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { NavBar } from "@/features/navigation";
+import { Tilt3D } from "@/shared";
 import { pageContent } from "@/config";
 
 export default function Home() {
@@ -68,16 +69,21 @@ export default function Home() {
           </div>
 
           <div className="relative flex justify-center md:justify-end">
-            <div className="chiyo-float w-full max-w-[460px] rounded-[2.5rem] overflow-hidden shadow-2xl">
-              <Image
-                src="/assets/chiyo/jars-both.png"
-                alt="Chiyo strawberry chia pudding jars"
-                width={7516}
-                height={4600}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
+            <Tilt3D className="chiyo-float w-full max-w-[460px]">
+              <div
+                className="rounded-[2.5rem] overflow-hidden shadow-2xl"
+                style={{ boxShadow: "0 40px 60px -15px rgba(108, 76, 158, 0.45)" }}
+              >
+                <Image
+                  src="/assets/chiyo/jars-both.png"
+                  alt="Chiyo strawberry chia pudding jars"
+                  width={7516}
+                  height={4600}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
+            </Tilt3D>
           </div>
         </div>
       </section>
