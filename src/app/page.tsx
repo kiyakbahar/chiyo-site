@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { NavBar } from "@/features/navigation";
-import { Tilt3D } from "@/shared";
 import { pageContent } from "@/config";
 
 export default function Home() {
@@ -33,7 +32,7 @@ export default function Home() {
             </span>
 
             <Image
-              src="/assets/chiyo/logo.png"
+              src="/assets/chiyo/logo-transparent.png"
               alt="Chiyo"
               width={2339}
               height={1654}
@@ -69,21 +68,42 @@ export default function Home() {
           </div>
 
           <div className="relative flex justify-center md:justify-end">
-            <Tilt3D className="chiyo-float w-full max-w-[460px]">
+            <div
+              className="chiyo-float w-full max-w-[380px]"
+              style={{ perspective: "1600px" }}
+            >
               <div
-                className="rounded-[2.5rem] overflow-hidden shadow-2xl"
-                style={{ boxShadow: "0 40px 60px -15px rgba(108, 76, 158, 0.45)" }}
+                className="chiyo-jarspin relative w-full"
+                style={{
+                  aspectRatio: "3758 / 4600",
+                  transformStyle: "preserve-3d",
+                }}
               >
-                <Image
-                  src="/assets/chiyo/jars-both.png"
-                  alt="Chiyo strawberry chia pudding jars"
-                  width={7516}
-                  height={4600}
-                  className="w-full h-auto"
-                  priority
+                {/* Front view */}
+                <div
+                  className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    boxShadow: "0 40px 60px -15px rgba(108, 76, 158, 0.45)",
+                    backgroundImage: "url(/assets/chiyo/jars-both.png)",
+                    backgroundSize: "200% 100%",
+                    backgroundPosition: "0% 50%",
+                  }}
+                />
+                {/* Back view */}
+                <div
+                  className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
+                    boxShadow: "0 40px 60px -15px rgba(108, 76, 158, 0.45)",
+                    backgroundImage: "url(/assets/chiyo/jars-both.png)",
+                    backgroundSize: "200% 100%",
+                    backgroundPosition: "100% 50%",
+                  }}
                 />
               </div>
-            </Tilt3D>
+            </div>
           </div>
         </div>
       </section>
