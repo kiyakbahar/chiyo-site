@@ -63,6 +63,50 @@ body {
   animation: chiyo-jarspin 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
+.chiyo-jar-front,
+.chiyo-jar-back {
+  backface-visibility: hidden;
+}
+
+.chiyo-jar-back {
+  transform: rotateY(180deg);
+}
+
+/* 3D rotateY + rounded corners + overflow:hidden is unreliable on many
+   mobile browsers, so fall back to a plain opacity crossfade instead. */
+@media (max-width: 767px) {
+  .chiyo-jarspin {
+    animation: none;
+    transform-style: flat;
+  }
+
+  .chiyo-jar-front,
+  .chiyo-jar-back {
+    backface-visibility: visible;
+    transform: none;
+  }
+
+  .chiyo-jar-front {
+    animation: chiyo-jarfade-front 9s ease-in-out infinite;
+  }
+
+  .chiyo-jar-back {
+    animation: chiyo-jarfade-back 9s ease-in-out infinite;
+  }
+
+  @keyframes chiyo-jarfade-front {
+    0%, 40% { opacity: 1; }
+    50%, 90% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes chiyo-jarfade-back {
+    0%, 40% { opacity: 0; }
+    50%, 90% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}
+
 a {
   text-decoration: none;
 }

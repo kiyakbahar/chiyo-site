@@ -51,7 +51,7 @@ export default function Home() {
               {hero.description}
             </p>
 
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <button
                 className="px-8 py-3.5 rounded-full font-bold text-lg text-white transition-transform hover:scale-105"
                 style={{ backgroundColor: "var(--chiyo-pink)" }}
@@ -81,9 +81,8 @@ export default function Home() {
               >
                 {/* Front view */}
                 <div
-                  className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl"
+                  className="chiyo-jar-front absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl"
                   style={{
-                    backfaceVisibility: "hidden",
                     boxShadow: "0 40px 60px -15px rgba(108, 76, 158, 0.45)",
                     backgroundImage: "url(/assets/chiyo/jars-both.png)",
                     backgroundSize: "200% 100%",
@@ -92,10 +91,8 @@ export default function Home() {
                 />
                 {/* Back view */}
                 <div
-                  className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl"
+                  className="chiyo-jar-back absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl"
                   style={{
-                    backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)",
                     boxShadow: "0 40px 60px -15px rgba(108, 76, 158, 0.45)",
                     backgroundImage: "url(/assets/chiyo/jars-both.png)",
                     backgroundSize: "200% 100%",
